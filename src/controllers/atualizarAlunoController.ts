@@ -3,7 +3,7 @@ import { Request, Response } from "express";
 class atualizarAluno {
     async update(req:Request, res:Response){
         const prisma = new PrismaClient();
-        const {id,nomeAluno}= req.body
+        const {id,nomeAluno}= req.params
         const atualizarAluno = await prisma.alunos.update({
             where: {
                 id_Aluno: Number (id),
